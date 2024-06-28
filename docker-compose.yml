@@ -19,7 +19,7 @@ services:
     networks:
       - internal_network
     environment:
-      - REACT_APP_BACKEND_URL=http://backend:8000
+      - REACT_APP_BACKEND_URL=http://localhost:8000
       - DOCKER_CONTAINER=True
   
   backend:
