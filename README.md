@@ -1,4 +1,3 @@
-
 # Proyecto N5
 
 Este proyecto es una aplicación web que utiliza Django para el backend y React para el frontend. Está containerizado utilizando Docker y puede ser orquestado con Docker Compose. La aplicación viene con datos precargados y un usuario administrador con las credenciales `admin` / `admin` para acceder al sistema.
@@ -37,11 +36,18 @@ Asegúrate de tener instalados los siguientes componentes en tu máquina de desa
 2. Crea un archivo `.env` en el directorio raíz del proyecto y configura las variables de entorno necesarias. Puedes usar el siguiente contenido como plantilla para tu archivo `.env`:
 
    ```env
-   DB_NAME=your-database-name
-   DB_USER=your-database-user
-   DB_PASSWORD=your-database-password
+   SECRET_KEY=your-production-secret-key
+   DEBUG=False
+   DB_ENGINE=django.db.backends.postgresql
+   DB_NAME=traffic_db
+   DB_USER=myuser
+   DB_PASSWORD=mypassword
    DB_HOST=db
    DB_PORT=5432
+   HOST=0.0.0.0
+   PORT=8000
+   ALLOWED_HOSTS=*
+   REACT_APP_BACKEND_URL=http://localhost:8000
    ```
 
 3. Construye y levanta los contenedores usando Docker Compose:
@@ -177,5 +183,4 @@ N5/
 ├── .env
 ├── docker-compose.yml
 └── README.md
-```
 ```
